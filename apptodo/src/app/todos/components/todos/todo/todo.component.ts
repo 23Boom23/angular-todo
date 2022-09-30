@@ -16,9 +16,11 @@ export class TodoComponent implements OnInit, OnChanges {
   @ViewChild("textInput") textInput: ElementRef | undefined;
 
   constructor(private todosService: TodosService) { }
+
   ngOnInit() {
     this.editingText = this.todoProps?.text || '';
   }
+  
   ngOnChanges(changes: SimpleChanges) {
     console.log(changes);
     if (changes['isEditingProps'].currentValue) {
